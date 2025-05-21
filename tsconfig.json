@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", // Target modern untuk async/await dan fitur baru
+    "module": "CommonJS", // Modul umum untuk Node.js
+    "lib": ["ES2022"], // Hanya lib ES, tidak DOM
+
+    "outDir": "dist", // Output build
+    "declaration": true,
+    "declarationDir": "dist/types",
+
+    "moduleResolution": "Node", // Resolusi modul khas Node.js
+    "allowJs": false,
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+
+    "esModuleInterop": true, // Kompatibilitas dengan modul CommonJS
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "incremental": true,
+    "composite": false,
+    "noEmit": false, // Aktifkan emit saat build (ubah ke true jika hanya cek type)
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "build", "coverage", "**/*.spec.ts", "**/*.test.ts"]
+}

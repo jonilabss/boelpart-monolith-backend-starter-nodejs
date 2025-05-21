@@ -1,0 +1,30 @@
+{
+  "extends": ["config:base"],
+  "labels": ["dependencies"],
+  "dependencyDashboard": true,
+  "schedule": ["before 3am on monday"],
+
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^@types/"],
+      "groupName": "types",
+      "automerge": true
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "groupName": "dev dependencies",
+      "automerge": false
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    }
+  ],
+
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 4am on monday"]
+  },
+
+  "gitAuthor": "Renovate Bot <bot@renovateapp.com>"
+}
