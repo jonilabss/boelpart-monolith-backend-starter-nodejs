@@ -1,4 +1,3 @@
-
 // src/app.ts
 
 import express from 'express';
@@ -8,10 +7,9 @@ import compression from 'compression';
 import morgan from 'morgan';
 import rateLimit from 'express-rate-limit';
 import hpp from 'hpp';
-import xss from 'xss-clean';
 import mongoSanitize from 'express-mongo-sanitize';
 
-import router from './routes';
+//import router from './routes';
 //import { errorHandler } from './middleware/errorHandler';
 
 const app = express();
@@ -46,16 +44,13 @@ app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));
 // Cegah HPP
 app.use(hpp());
 
-// Cegah XSS
-app.use(xss());
-
 // Sanitasi query untuk Mongo
 app.use(mongoSanitize());
 
 /**
  * Routing utama aplikasi
  */
-app.use('/', router);
+//app.use('/', router);
 
 /**
  * Global error handler (diletakkan setelah route)
